@@ -7,7 +7,6 @@ import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import Index from "./pages/Index.tsx";
 import About from "./pages/About.tsx";
-import Services from "./pages/Services.tsx";
 import Experience from "./pages/Experience.tsx";
 import Projects from "./pages/Projects.tsx";
 import Skills from "./pages/Skills.tsx";
@@ -25,7 +24,6 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/about" element={<About />} />
-          <Route path="/services" element={<Services />} />
           <Route path="/experience" element={<Experience />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/skills" element={<Skills />} />
