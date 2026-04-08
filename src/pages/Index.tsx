@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Globe, Search, Megaphone, BarChart3, FileText, Share2, Eye, Download } from "lucide-react";
+import { ArrowRight, Globe, Search, Megaphone, BarChart3, FileText, Download } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import AnimatedSection from "@/components/AnimatedSection";
@@ -7,7 +7,6 @@ import heroBg from "@/assets/hero-bg.jpg";
 
 const features = [
   { icon: Megaphone, title: "Paid Advertising", desc: "Google Ads & Meta Ads campaigns" },
-  { icon: Share2, title: "Social Media Marketing", desc: "Strategic content & engagement" },
   { icon: Search, title: "SEO Optimization", desc: "Higher rankings & visibility" },
   { icon: Globe, title: "WordPress Development", desc: "Custom websites & content management" },
   { icon: BarChart3, title: "Analytics & Insights", desc: "Data-driven marketing decisions" },
@@ -15,15 +14,12 @@ const features = [
 
 const ResumeButton = () => {
   const [open, setOpen] = useState(false);
-  const ref = useRef<HTMLDivElement | null>(null);
+  const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const handler = (e: any) => {
-      if (ref.current && !ref.current.contains(e.target as Node)) {
-        setOpen(false);
-      }
+    const handler = (e: MouseEvent) => {
+      if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false);
     };
-
     document.addEventListener("mousedown", handler);
     return () => document.removeEventListener("mousedown", handler);
   }, []);
@@ -37,7 +33,6 @@ const ResumeButton = () => {
         <FileText size={18} />
         View Resume
       </button>
-
       {open && (
         <motion.div
           initial={{ opacity: 0, y: 8 }}
@@ -54,7 +49,6 @@ const ResumeButton = () => {
             <FileText size={16} className="text-primary" />
             View Resume
           </a>
-
           <a
             href="/KaviPriya_Resume.pdf"
             download
@@ -78,7 +72,6 @@ const Index = () => (
       style={{ backgroundImage: `url(${heroBg})`, backgroundSize: "cover", backgroundPosition: "center" }}
     >
       <div className="absolute inset-0 hero-bg opacity-85" />
-
       <div className="container relative mx-auto px-4 md:px-6 pt-24 pb-16">
         <div className="max-w-3xl">
           <motion.p
@@ -89,7 +82,6 @@ const Index = () => (
           >
             Hello, I'm
           </motion.p>
-
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -98,7 +90,6 @@ const Index = () => (
           >
             Kavi <span className="text-gradient">Priya R</span>
           </motion.h1>
-
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -107,17 +98,14 @@ const Index = () => (
           >
             Digital Marketing Analyst
           </motion.p>
-
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.8 }}
             className="text-base md:text-lg max-w-xl mb-8 text-hero-foreground/60"
           >
-            Enthusiastic and result-driven Digital Marketing Analyst with hands-on experience in WordPress, SEO, Social Media Marketing, and Paid Advertising.
+            Enthusiastic and result-driven Digital Marketing Analyst with hands-on experience in WordPress, SEO, Social Media Marketing, and Paid Advertising. Actively applying digital marketing strategies through real-time projects.
           </motion.p>
-
-          {/* Buttons */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -126,18 +114,16 @@ const Index = () => (
           >
             <Link
               to="/projects"
-              className="inline-flex items-center justify-center gap-2 h-11 rounded-md px-8 bg-gradient-to-r from-primary to-accent text-primary-foreground font-semibold shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-primary/30 hover:shadow-xl"
+              className="inline-flex items-center justify-center gap-2 h-11 rounded-md px-8 bg-primary text-primary-foreground hover:bg-primary/90 font-semibold shadow-lg transition-all duration-300 hover:scale-105"
             >
               View Projects <ArrowRight size={18} />
             </Link>
-
             <ResumeButton />
-
             <Link
               to="/contact"
-              className="inline-flex items-center justify-center gap-2 h-11 rounded-md px-8 bg-transparent border-2 border-primary text-primary font-semibold transition-all duration-300 hover:bg-primary hover:text-white hover:scale-105 shadow-md"
+              className="inline-flex items-center justify-center gap-2 h-11 rounded-md px-8 border border-hero-foreground/30 text-hero-foreground hover:bg-hero-foreground/10 font-semibold transition-all duration-300 hover:scale-105"
             >
-              Hire Me <ArrowRight size={18} />
+              Hire Me
             </Link>
           </motion.div>
         </div>
@@ -150,7 +136,7 @@ const Index = () => (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {features.map((f, i) => (
             <AnimatedSection key={f.title} delay={i * 0.1}>
-              <div className="p-6 rounded-xl bg-card border border-border text-center h-full">
+              <div className="p-6 rounded-xl bg-card border border-border card-elevated text-center h-full">
                 <div className="inline-flex p-3 rounded-xl bg-primary/10 text-primary mb-4">
                   <f.icon size={24} />
                 </div>
@@ -161,6 +147,22 @@ const Index = () => (
           ))}
         </div>
       </div>
+    </section>
+
+    {/* About Preview */}
+    <section className="py-16 md:py-24 bg-secondary/50">
+      <AnimatedSection className="container mx-auto px-4 md:px-6 text-center max-w-3xl">
+        <h2 className="section-heading mb-6">Driving Digital Growth That Matters</h2>
+        <p className="text-muted-foreground text-lg leading-relaxed mb-8">
+          I'm a passionate Digital Marketing Analyst from Chennai, India. I specialize in WordPress development, SEO, social media marketing, and paid advertising to help businesses reach their target audience and grow online.
+        </p>
+        <Link
+          to="/about"
+          className="inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium border border-primary/30 text-primary hover:bg-primary/10 h-10 px-4 py-2 transition-colors"
+        >
+          Learn More About Me <ArrowRight size={16} className="ml-2" />
+        </Link>
+      </AnimatedSection>
     </section>
   </main>
 );
