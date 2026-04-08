@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Globe, Search, Megaphone, BarChart3, FileText, Share2, Eye, Download } from "lucide-react";
-import { useState, useRef, useEffect } from "react";
+import { ArrowRight, Globe, Search, Megaphone, BarChart3, FileText, Share2, Eye, Download } from "lucide-react";import { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import AnimatedSection from "@/components/AnimatedSection";
 import heroBg from "@/assets/hero-bg.jpg";
