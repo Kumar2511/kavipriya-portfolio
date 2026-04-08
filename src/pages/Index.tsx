@@ -19,8 +19,11 @@ const ResumeButton = () => {
 
   useEffect(() => {
     const handler = (e: any) => {
-      if (ref.current && !ref.current.contains(e.target)) setOpen(false);
+      if (ref.current && !ref.current.contains(e.target as Node)) {
+        setOpen(false);
+      }
     };
+
     document.addEventListener("mousedown", handler);
     return () => document.removeEventListener("mousedown", handler);
   }, []);
@@ -114,7 +117,7 @@ const Index = () => (
             Enthusiastic and result-driven Digital Marketing Analyst with hands-on experience in WordPress, SEO, Social Media Marketing, and Paid Advertising.
           </motion.p>
 
-          {/* UPDATED BUTTONS */}
+          {/* Buttons */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
