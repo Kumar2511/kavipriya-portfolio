@@ -1,0 +1,76 @@
+import { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { Menu, X } from "lucide-react";
+
+const navLinks = [
+  { label: "Home", path: "/" },
+  { label: "About", path: "/about" },
+  { label: "Services", path: "/services" },
+  { label: "Experience", path: "/experience" },
+  { label: "Projects", path: "/projects" },
+  { label: "Skills", path: "/skills" },
+  { label: "Contact", path: "/contact" },
+];
+
+const Navbar = () => {
+  const [open, setOpen] = useState(false);
+  const location = useLocation();
+
+  return (
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-card/80 backdrop-blur-md border-b border-border">
+      <div className="container mx-auto px-4 md:px-6 flex items-center justify-between h-16">
+        <Link to="/" className="text-xl font-heading font-bold">
+          Kavi<span className="text-gradient">Priya</span>
+        </Link>
+
+        {/* Desktop */}
+        <div className="hidden md:flex items-center gap-1">
+          {navLinks.map((link) => (
+            <Link
+              key={link.path}
+              to={link.path}
+              className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
+                location.pathname === link.path
+                  ? "bg-primary/10 text-primary"
+                  : "text-muted-foreground hover:text-foreground"
+              }`}
+            >
+              {link.label}
+            </Link>
+          ))}
+        </div>
+
+        {/* Mobile toggle */}
+        <button
+          className="md:hidden p-2 text-foreground"
+          onClick={() => setOpen(!open)}
+          aria-label="Toggle menu"
+        >
+          {open ? <X size={24} /> : <Menu size={24} />}
+        </button>
+      </div>
+
+      {/* Mobile menu */}
+      {open && (
+        <div className="md:hidden bg-card border-b border-border">
+          {navLinks.map((link) => (
+            <Link
+              key={link.path}
+              to={link.path}
+              onClick={() => setOpen(false)}
+              className={`block px-6 py-3 text-sm font-medium transition-colors ${
+                location.pathname === link.path
+                  ? "bg-primary/10 text-primary"
+                  : "text-muted-foreground hover:text-foreground"
+              }`}
+            >
+              {link.label}
+            </Link>
+          ))}
+        </div>
+      )}
+    </nav>
+  );
+};
+
+export default Navbar;
