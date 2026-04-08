@@ -76,7 +76,7 @@ const About = () => (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <AnimatedSection delay={0.1}>
               <div className="p-6 rounded-xl bg-card border border-border">
-                <h4 className="font-semibold text-foreground">BSc Computer Science</h4>
+                <h4 className="font-semibold text-foreground">Bsc Computer Science</h4>
                 <p className="text-sm text-muted-foreground mt-1">EGS Pillay Arts & Science College, Nagapattinam</p>
                 <p className="text-xs text-primary mt-2">2020 - 2023</p>
               </div>
