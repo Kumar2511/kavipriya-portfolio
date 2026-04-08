@@ -15,9 +15,10 @@ const features = [
 
 const ResumeButton = () => {
   const [open, setOpen] = useState(false);
-const ref = useRef<HTMLDivElement | null>(null);
+  const ref = useRef<HTMLDivElement | null>(null);
+
   useEffect(() => {
-    const handler = (e) => {
+    const handler = (e: any) => {
       if (ref.current && !ref.current.contains(e.target)) setOpen(false);
     };
     document.addEventListener("mousedown", handler);
@@ -110,7 +111,7 @@ const Index = () => (
             transition={{ duration: 0.5, delay: 0.8 }}
             className="text-base md:text-lg max-w-xl mb-8 text-hero-foreground/60"
           >
-            Enthusiastic and result-driven Digital Marketing Analyst with hands-on experience in WordPress, SEO, Social Media Marketing, and Paid Advertising. Actively applying digital marketing strategies through real-time projects.
+            Enthusiastic and result-driven Digital Marketing Analyst with hands-on experience in WordPress, SEO, Social Media Marketing, and Paid Advertising.
           </motion.p>
 
           {/* UPDATED BUTTONS */}
@@ -124,7 +125,7 @@ const Index = () => (
               to="/projects"
               className="inline-flex items-center justify-center gap-2 h-11 rounded-md px-8 bg-gradient-to-r from-primary to-accent text-primary-foreground font-semibold shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-primary/30 hover:shadow-xl"
             >
-              View projects <ArrowRight size={18} />
+              View Projects <ArrowRight size={18} />
             </Link>
 
             <ResumeButton />
@@ -146,7 +147,7 @@ const Index = () => (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {features.map((f, i) => (
             <AnimatedSection key={f.title} delay={i * 0.1}>
-              <div className="p-6 rounded-xl bg-card border border-border card-elevated text-center h-full">
+              <div className="p-6 rounded-xl bg-card border border-border text-center h-full">
                 <div className="inline-flex p-3 rounded-xl bg-primary/10 text-primary mb-4">
                   <f.icon size={24} />
                 </div>
@@ -157,22 +158,6 @@ const Index = () => (
           ))}
         </div>
       </div>
-    </section>
-
-    {/* About Preview */}
-    <section className="py-16 md:py-24 bg-secondary/50">
-      <AnimatedSection className="container mx-auto px-4 md:px-6 text-center max-w-3xl">
-        <h2 className="section-heading mb-6">Driving Digital Growth That Matters</h2>
-        <p className="text-muted-foreground text-lg leading-relaxed mb-8">
-          I'm a passionate Digital Marketing Analyst from Chennai, India. I specialize in WordPress development, SEO, social media marketing, and paid advertising to help businesses reach their target audience and grow online.
-        </p>
-        <Link
-          to="/about"
-          className="inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium border border-primary/30 text-primary hover:bg-primary/10 h-10 px-4 py-2 transition-colors"
-        >
-          Learn More About Me <ArrowRight size={16} className="ml-2" />
-        </Link>
-      </AnimatedSection>
     </section>
   </main>
 );
