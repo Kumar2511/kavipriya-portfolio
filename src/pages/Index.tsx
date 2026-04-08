@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Globe, Search, Megaphone, BarChart3, FileText, Share2, Eye, Download } from "lucide-react";import { useState, useRef, useEffect } from "react";
+import { ArrowRight, Globe, Search, Megaphone, BarChart3, FileText, Share2, Eye, Download } from "lucide-react";
+import { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import AnimatedSection from "@/components/AnimatedSection";
 import heroBg from "@/assets/hero-bg.jpg";
@@ -14,8 +15,7 @@ const features = [
 
 const ResumeButton = () => {
   const [open, setOpen] = useState(false);
-  const ref = useRef(null);
-
+const ref = useRef<HTMLDivElement | null>(null);
   useEffect(() => {
     const handler = (e) => {
       if (ref.current && !ref.current.contains(e.target)) setOpen(false);
