@@ -97,7 +97,7 @@ const Projects = () => (
                     {/* Work */}
                     <div>
                       <h4 className="flex items-center gap-2 text-sm font-semibold text-primary mb-3">
-                        <CheckCircle2 size={16} /> Key Responsibilities
+                        <CheckCircle2 size={16} /> Project Overview
                       </h4>
 
                       <ul className="space-y-2">

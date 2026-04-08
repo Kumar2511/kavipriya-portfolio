@@ -6,7 +6,7 @@ import skillsBanner from "@/assets/skills-banner.jpg";
 const skillCategories = [
   { category: "Digital Marketing", skills: [{ name: "WordPress Development", level: 90 }, { name: "SEO (On-Page)", level: 85 }, { name: "Social Media Marketing", level: 88 }, { name: "Content Strategy", level: 85 }] },
   { category: "Paid Advertising", skills: [{ name: "Google Ads", level: 80 }, { name: "Meta Ads (FB & IG)", level: 85 }, { name: "Lead Generation", level: 82 }, { name: "Performance Marketing", level: 78 }] },
-  { category: "Tools", skills: [{ name: "Canva", level: 92 }, { name: "Google Analytics", level: 70 }, { name: "WordPress Plugins", level: 88 }, { name: "SEOptimer", level: 75 }] },
+  { category: "Tools", skills: [{ name: "Google Ads", level: 88 },{ name: "Meta Ads Manager", level: 89 },{ name: "Canva", level: 92 }, { name: "Google Analytics", level: 70 }, { name: "WordPress Plugins", level: 88 }, { name: "SEOptimer", level: 75 }] },
   { category: "Additional Skills", skills: [{ name: "Email Marketing", level: 75 }, { name: "Content Creation & Strategy", level: 85 }] },
   { category: "Soft Skills", skills: [{ name: "Creative & Innovative Thinking", level: 90 }, { name: "Strong Communication", level: 88 }, { name: "Time Management & Prioritization", level: 85 }, { name: "Fast Learner & Adaptable", level: 92 }, { name: "Analytical & Problem-Solving", level: 85 }, { name: "Detail-Oriented Approach", level: 88 }, { name: "Team Collaboration", level: 86 }, { name: "Ability to Handle Pressure", level: 84 }] },
 ];
